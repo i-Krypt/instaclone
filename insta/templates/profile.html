@@ -1,0 +1,73 @@
+{% extends 'base.html'%}
+{% load static %}
+
+{% block content %}
+<div class="row mb-4 pt-4">
+    <div class="col-sm-4">
+      <img src="{{user.profile.profile_picture.url}}" alt="user" width="200" height="200" class="rounded-circle account-img">
+    </div>
+    <div class="col-sm-8">
+      <section>
+        <div class="row1">
+          <h3 class="text-monospace">{{user.username}}</h3>
+          <p> </p>
+          <a  class="ml-2">
+              <div class="ui left labeled button" tabindex="0">
+                  <a href="{% url 'logout' %}" class="ui basic label">
+                    Log Out
+                  </a>
+                  <div class="ui icon button">
+                      <i class="fas fa-sign-out-alt"></i>
+                  </div>
+                </div>
+          </a>
+          <a href="#">
+            <img src="">
+          </a>
+        </div>
+        <div class="row2 mt-3">
+          <p class="text-monospace">20 posts</p>
+          <p class="text-monospace ml-3">100 followers</p>
+          <p class="text-monospace ml-3">2000 following</p>
+        </div>
+        <div class="row3 mt-3">
+          <p class="text-monospace font-weight-bold">Jeff</p>
+          <p class="text-monospace">The gram displays the man</p>
+        </div>
+
+
+        <div class="row">
+            {% for post in posts %}
+
+            <div class="col-md-6">
+                <div class=" card ">
+
+                    <div class="card-body">
+                        <img src="{{post.image.url}}" class="img-responsive imgs" id='imag' alt=" ">
+
+                        <h6 class="text-center text-info">{{post.image_name}}</h6>
+                        <p class="text-dark image-descrips" id="image-descrip">
+                            {{post.caption |slice:":50"}}...</p>
+
+                    </div>
+
+                    <div class="card-footer">
+
+
+
+
+                    </div>
+
+
+
+
+                </div>
+
+
+            </div>
+
+
+            {% endfor %}
+
+        </div>
+{% endblock %}
