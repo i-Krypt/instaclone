@@ -54,7 +54,7 @@ Open the application on your browser on the port given.
 ### Technology used  
   
 * [Python3.6](https://www.python.org/)  
-* [Django 1.11](https://docs.djangoproject.com/en/2.2/)  
+* [Django 2.26](https://docs.djangoproject.com/en/2.2/)  
  
 ### Contact Information   
 reach me on my email: vamay505@gmail.com
