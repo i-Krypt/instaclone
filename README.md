@@ -5,7 +5,7 @@ The user can also view the image category on toggle and image details.
 Sam Nujoma
   
 ### Description  
-This is a Django application for personal gallery that allows a user to upload images for other to see and be able to to share by coping the image link.
+This is a Django application that imitates instagram functionalities.
     
 ### Screenshots 
 ###### Home page
@@ -15,9 +15,9 @@ This is a Django application for personal gallery that allows a user to upload i
 ### User Story  
   
 * User gets to view different photos
-* Click a single image to expand it and view the details of the photo  
+* Get to like and comment on an image
 * Search for different categories of the images 
-* Copy a link to the photo to share with my friends.  
+* View user profile and posts
 * View photos based on the location they were taken.  
   
 
@@ -27,11 +27,11 @@ Get started ...
   
 ##### Clone the repository:  
  ```bash 
-https://github.com/i-Krypt/gallage.git
+https://github.com/i-Krypt/instaclone.git
 ```
 ##### Navigate into the folder and install requirements  
  ```bash 
-cd gallage and pip install -r requirements.txt 
+cd instaclone and pip install -r requirements.txt 
 ```
 ##### Install and activate Virtual
  ```bash 
