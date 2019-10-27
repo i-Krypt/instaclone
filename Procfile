@@ -1,1 +1,1 @@
-web: gunicorn gram.wsgi
+web: gunicorn gram.wsgi --log-file -
