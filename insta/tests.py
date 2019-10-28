@@ -31,3 +31,17 @@ class ProfileTestClass(TestCase):
        self.profile.delete_profile()
        profile = Profile.objects.all()
        self.assertTrue(len(profile) == 0)
+class CommentTestClass(TestCase):
+   def setUp(self):
+       self.comment=Comment()
+       self.comment.save_comment()
+   def test_instance(self):
+       self.assertTrue(isinstance(self.comment,Comment))
+   def test_save_comment(self):
+       self.comment.save_comment()
+       comments = Comment.objects.all()
+       self.assertTrue(len(comments) > 0)
+   def test_delete_comment(self):
+       self.comment.delete_comment()
+       comment = Comment.objects.all()
+       self.assertTrue(len(comment) == 0)
