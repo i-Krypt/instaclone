@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
 from django.utils import timezone
+from django.dispatch import receiver
+from django.db.models.signals import post_save
 
 #Create your models here.
 class Profile(models.Model):
@@ -14,7 +16,14 @@ class Profile(models.Model):
     def save(self,*args, **kwargs):
         super().save(*args, **kwargs)
 
+    @receiver(post_save,sender=User)
+    def create_profile(created,instance,sender,**kwargs):
+        if created:
+            Profile.objects.create(user=instance)
 
+    @receiver(post_save,sender=User)
+    def save_profile(instance,sender,**kwargs):
+        instance.profile.save()
 
 class Post(models.Model):
     image_name = models.CharField(max_length = 30)
